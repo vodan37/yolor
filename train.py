@@ -521,7 +521,7 @@ if __name__ == '__main__':
 
     # Hyperparameters
     with open(opt.hyp) as f:
-        hyp = yaml.load(f, Loader=yaml.FullLoader)  # load hyps
+        hyp = yaml.load(f)  # load hyps
         if 'box' not in hyp:
             warn('Compatibility: %s missing "box" which was renamed from "giou" in %s' %
                  (opt.hyp, 'https://github.com/ultralytics/yolov5/pull/1120'))
