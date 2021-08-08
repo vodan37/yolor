@@ -64,7 +64,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
     cuda = device.type != 'cpu'
     init_seeds(2 + rank)
     with open(opt.data) as f:
-        data_dict = yaml.safe_load(f, Loader=yaml.FullLoader)  # data dict
+        data_dict = yaml.safe_load(f)  # data dict
     with torch_distributed_zero_first(rank):
         check_dataset(data_dict)  # check
     train_path = data_dict['train']
