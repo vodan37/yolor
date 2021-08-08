@@ -55,9 +55,9 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
 
     # Save run settings
     with open(save_dir / 'hyp.yaml', 'w') as f:
-        yaml.safe_dump(hyp, f, sort_keys=False)
+        yaml.safe_dump(hyp, f)
     with open(save_dir / 'opt.yaml', 'w') as f:
-        yaml.safe_dump(vars(opt), f, sort_keys=False)
+        yaml.safe_dump(vars(opt), f)
 
     # Configure
     plots = not opt.evolve  # create plots
