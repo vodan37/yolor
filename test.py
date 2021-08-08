@@ -80,7 +80,7 @@ def test(data,
     model.eval()
     is_coco = data.endswith('coco.yaml')  # is COCO dataset
     with open(data) as f:
-        data = yaml.safe_load(f, Loader=yaml.FullLoader)  # model dict
+        data = yaml.safe_load(f)  # model dict
     check_dataset(data)  # check
     nc = 1 if single_cls else int(data['nc'])  # number of classes
     iouv = torch.linspace(0.5, 0.95, 10).to(device)  # iou vector for mAP@0.5:0.95
